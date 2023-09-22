@@ -1,44 +1,285 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <title>Miguel</title>
     <style>
-        .header-group {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --white-color: #fff;
+  --blue-color: #4070f4;
+  --grey-color: #707070;
+  --grey-color-light: #aaa;
+}
+body {
+  background-image: url("https://imgur.com/HyMIWWB.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: #DCDCDC;
+  background-size: 100% 696px;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  transition: all 0.5s ease;
+}
+body.dark {
+  background-color: #333;
+}
+body.dark {
+  --white-color: #333;
+  --blue-color: #fff;
+  --grey-color: #f2f2f2;
+  --grey-color-light: #aaa;
+}
+/* navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  z-index: 1000;
+  box-shadow: 0 0 2px var(--grey-color-light);
+}
+.logo_item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--blue-color);
+}
+.navbar img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.search_bar {
+  height: 47px;
+  max-width: 430px;
+  width: 100%;
+}
+.search_bar input {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  font-size: 18px;
+  outline: none;
+  background-color: var(--white-color);
+  color: var(--grey-color);
+  border: 1px solid var(--grey-color-light);
+  padding: 0 20px;
+}
+.navbar_content {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+.navbar_content i {
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--grey-color);
+}
+/* sidebar */
+.sidebar {
+  background-color: var(--white-color);
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 80px 20px;
+  z-index: 100;
+  overflow-y: scroll;
+  box-shadow: 0 0 1px var(--grey-color-light);
+  transition: all 0.5s ease;
+}
+.sidebar.close {
+  padding: 60px 0;
+  width: 80px;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.menu_content {
+  position: relative;
+}
+.menu_title {
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 18px;
+}
+.sidebar.close .menu_title {
+  padding: 6px 30px;
+}
+.menu_title::before {
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+.menu_dahsboard::before {
+  content: "Dashboard";
+}
+.menu_socials::before {
+  content: "Socials";
+}
+.menu_setting::before {
+  content: "Setting";
+}
+.sidebar.close .menu_title::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  border-radius: 12px;
+  background: var(--grey-color-light);
+}
+.menu_items {
+  padding: 0;
+  list-style: none;
+}
+.navlink_icon {
+  position: relative;
+  font-size: 22px;
+  min-width: 50px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 6px;
+}
+.navlink_icon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: calc(100% + 100px);
+  left: -20px;
+}
+.navlink_icon:hover {
+  background: var(--blue-color);
+}
+.sidebar .nav_link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+.sidebar.close .navlink {
+  display: none;
+}
+.nav_link:hover {
+  color: var(--white-color);
+  background: var(--blue-color);
+}
+.sidebar.close .nav_link:hover {
+  background: var(--white-color);
+}
+.submenu_item {
+  cursor: pointer;
+}
+.submenu {
+  display: none;
+}
+.submenu_item .arrow-left {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  margin-right: auto;
+}
+.sidebar.close .submenu {
+  display: none;
+}
+.show_submenu ~ .submenu {
+  display: block;
+}
+.show_submenu .arrow-left {
+  transform: rotate(90deg);
+}
+.submenu .sublink {
+  padding: 15px 15px 15px 52px;
+}
+.bottom_content {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  width: 260px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.bottom {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 0;
+  justify-content: space-around;
+  padding: 18px 0;
+  text-align: center;
+  width: 100%;
+  color: var(--grey-color);
+  border-top: 1px solid var(--grey-color-light);
+  background-color: var(--white-color);
+}
+.bottom i {
+  font-size: 20px;
+}
+.bottom span {
+  font-size: 18px;
+}
+.sidebar.close .bottom_content {
+  width: 50px;
+  left: 15px;
+}
+.sidebar.close .bottom span {
+  display: none;
+}
+.sidebar.hoverable .collapse_sidebar {
+  display: none;
+}
+#sidebarOpen {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #sidebarOpen {
+    font-size: 25px;
+    display: block;
+    margin-right: 10px;
+    cursor: pointer;
+    color: var(--grey-color);
+  }
+  .sidebar.close {
+    left: -100%;
+  }
+  .search_bar {
+    display: none;
+  }
+  .sidebar.close .bottom_content {
+    left: -100%;
+  }
+}
+.intro-image {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-        .header {
-            font-size: 40px;
-            color: green;
-        }
-
-        .subheader {
-            font-size: 17px;
-            color: black;
-            position: absolute;
-            top: 73px;
-            left: 29px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        .taskbar {
-            text-decoration: none;
-            text-align: center;
-            font-size: 17px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        
-        .intro-image {
-            position: absolute;
-            top: 130px;
-            right: 130px;
-            text-align: center;
-            font-size: 20px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-         }
  
         body {
             background-repeat: no-repeat;
@@ -57,62 +298,273 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-            
+            transition: background-color 0.3s, color 0.3s;
         }
+        .first-button:hover {
+    background-color: black;
+    color: white;
+}
         .socials {
             position: fixed;
             bottom: 0;
             right: 24px;
             z-index: 999;
         }
-    </style>
-</head>
-<body>
-       <div class="header-group">
-            <div class="header">MIGUEL</div>
-            <div class="subheader">PERSONAL BLOG & DUMP
+        .marquee-container {
+            overflow: hidden; 
+            width: 50%; 
+            border: 0px solid #000; 
+            padding: 0px; 
+            background-color: ;
+        }
+        .marquee {
+            white-space: nowrap; 
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .intro { 
+  text-align: center; 
+  font-family: Arial;
+}
+.gallery-small-img img {
+        height: 92px;
+        margin: 10px 0;
+        cursor: pointer;
+        display: block;
+        opacity: .6;
+      }
+      .gallery-small-img img:hover {
+        opacity: 1;
+      }
+      .gallery-small-img {
+        float: left;
+      }
+      .gallery {
+        position: absolute;
+        top: 220%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .image-cointainer img {
+        height: 500px;
+      }
+      .image-cointainer {
+        float: right;
+        padding: 10px;
+  
+      }
+        </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo_item">
+        <i class="bx bx-menu" id="sidebarOpen"></i>
+        <img src="images/logo.png" alt=""></i>MIGUEL
+      </div>
+      <div class="search_bar">
+        <input type="text" placeholder="Search" />
+      </div>
+      <div class="navbar_content">
+        <i class="bi bi-grid"></i>
+        <i class='bx bx-sun' id="darkLight"></i>
+        <i class='bx bx-bell' ></i>
+        <img src="images/profile.jpg" alt="" class="profile" />
+      </div>
+    </nav>
+    <!-- sidebar -->
+    <nav class="sidebar">
+      <div class="menu_content">
+        <ul class="menu_items">
+          <div class="menu_title menu_dahsboard"></div>
+          <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+          <!-- start -->
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-home-alt"></i>
+              </span>
+              <span class="navlink">Home</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+              <a href="#" class="nav_link sublink">About</a>
+              <a href="#" class="nav_link sublink">Blog</a>
+              <a href="#" class="nav_link sublink">Gallery</a>
+            </ul>
+          </li>
+          <!-- end -->
+          <!-- duplicate this li tag if you want to add or remove  navlink with submenu -->
+          <!-- start -->
+          <!-- end -->
+        </ul>
+        <ul class="menu_items">
+          <div class="menu_title menu_socials"></div>
+          <!-- duplicate these li tag if you want to add or remove navlink only -->
+          <!-- Start -->
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bxs-magic-wand"></i>
+              </span>
+              <span class="navlink">Facebook</span>
+            </a>
+          </li>
+          <!-- End -->
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-loader-circle"></i>
+              </span>
+              <span class="navlink">Instagram</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-filter"></i>
+              </span>
+              <span class="navlink">Twitter</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-filter"></i>
+              </span>
+              <span class="navlink">TikTok</span>
+            </a>
+          </li>
+        </ul>
+        
+        <!-- Sidebar Open / Close -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span>
+            <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span>
+            <i class='bx bx-log-out'></i>
+          </div>
         </div>
-       
-        <div class="taskbar">
-            <a href="athaliacopy.html" style="text-decoration:none; color:black;">Home</a> &nbsp; &nbsp; &nbsp; 
-            | &nbsp; &nbsp; &nbsp;
-            <a href="About.html" style="text-decoration:none; color: black;">Blog</a> &nbsp; &nbsp; &nbsp; 
-            | &nbsp; &nbsp; &nbsp;
-            <a href="Packages.html" style="text-decoration:none; color:black;">About</a> &nbsp; &nbsp; &nbsp;
-            | &nbsp; &nbsp; &nbsp;
-            <a href="Reviews.html" style="text-decoration:none; color:black;">Contact</a> &nbsp; &nbsp; &nbsp; 
-            | &nbsp; &nbsp; &nbsp;
-            <a href="Bookings.html" style="text-decoration:none; color:black;">Feedback</a> &nbsp; &nbsp; &nbsp;
-        </div></div><br><br>
-    &nbsp; &nbsp; &nbsp;
-<img src="https://imgur.com/ha1aCaY.jpg" width="850" height="530"></img>
+      </div>
+    </nav>
 
     <div class="socials">
-       <p>
-            <a href="https://www.facebook.com/athalia.travelticketing" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-128.png" alt="Facebook Logo" style="width:30px;height:30px;"></img></a>
-            <a href="#" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png" alt="Instagram Logo" style="width:30px;height:30px;"></img></a>
-            <a href="#" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png" alt="Twitter Logo" style="width:30px;height:30px;"></img></a></p>
+        <p>
+            <a href="https://www.facebook.com/migs.evangelista" target="_blank" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-128.png" alt="Facebook Logo" style="width:30px;height:30px;"></img></a>
+            <a href="https://www.instagram.com/migegs_/" target="_blank" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png" alt="Instagram Logo" style="width:30px;height:30px;"></img></a>
+            <a href="https://twitter.com/migsensation_" target="_blank" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png" alt="Twitter Logo" style="width:30px;height:30px;"></img></a></p>
     </div>
 
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="intro-image">
-       <img src="https://imgur.com/FPRkHsq.jpg" width="350" height="350"><br>
-       <p>Found love for art in web designing<br><br><br>
-       <button class="first-button">Test</button>
+        <img src="https://imgur.com/FPRkHsq.jpg" width="350" height="350"><br>
+        STUDENT - WEB DESIGNER<br>
+        "Found love for art in web designing"<br><br>
+        <button class="first-button">Test</button><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
     </div>
 
-<br><br><br><br><br><br>
+<br><br><br><br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7Ed2Mc9zvqYyxlrOKt1WRY?utm_source=generator" width="23.5%" height="330" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/55tqu0mMpkEvMVZeV98X9U?utm_source=generator" width="23.5%" height="330" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0169Rkc7w5KEBqzTfhAD3h?utm_source=generator" width="23.5%" height="330" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1PREkS0vA4S80xM5o6j2ml?utm_source=generator" width="23.5%" height="330" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7Ed2Mc9zvqYyxlrOKt1WRY?utm_source=generator" width="23.5%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/55tqu0mMpkEvMVZeV98X9U?utm_source=generator" width="23.5%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0169Rkc7w5KEBqzTfhAD3h?utm_source=generator" width="23.5%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1PREkS0vA4S80xM5o6j2ml?utm_source=generator" width="23.5%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 
+<div class="marquee-container">
+<marquee behavior="scroll" direction="right" scrollamount="10">
+<img src="https://imgur.com/PFqileM.jpg" width="200" height="250" alt="myself">&nbsp; &nbsp; &nbsp;
+<img src="https://imgur.com/5jC9WCU.jpg" width="200" height="250" alt="myself">&nbsp; &nbsp; &nbsp;
+<img src="https://imgur.com/TGGcACa.jpg" width="200" height="250" alt="myself">&nbsp; &nbsp; &nbsp;
+<img src="https://imgur.com/EXw3Wnk.jpg" width="200" height="250" alt="myself">&nbsp; &nbsp; &nbsp;
+<img src="https://imgur.com/EOWWKuy.jpg" width="200" height="250" alt="myself">&nbsp; &nbsp; &nbsp;
+<img src="https://imgur.com/QEimHjl.jpg" width="200" height="250" alt="myself">&nbsp; &nbsp; &nbsp;
+<img src="https://imgur.com/cxTBnR3.jpg" width="200" height="250" alt="myself">&nbsp; &nbsp; &nbsp;
+<img src="https://imgur.com/p80UUMj.jpg" width="200" height="250" alt="myself">&nbsp; &nbsp; &nbsp;
+</marquee></div>
 
-<marquee behavior="scroll" direction="left" scrollamount="10">
-<img src="https://imgur.com/entRODy.jpg" width="350" height="450" alt="myself">&nbsp; &nbsp; &nbsp;
-<img src="https://imgur.com/Op7MFtn.jpg" width="350" height="450" alt="myself">
-</marquee>
+    <div class="gallery"> 
+        <div class="gallery-small-img">
+    
+            <img src="https://imgur.com/DZ7hldL.jpg" onclick="myFunction(this)">
+            <img src="https://imgur.com/pAp3YLD.jpg" onclick="myFunction(this)">
+            <img src="https://imgur.com/x1Oo7no.jpg" onclick="myFunction(this)">
+            <img src="https://imgur.com/D5KTa9f.jpg" onclick="myFunction(this)">
+            <img src="https://imgur.com/Qmp3T2A.jpg" onclick="myFunction(this)">
+    
+            </div>
+            <div class="image-cointainer">
+                <img id="imageBox" src="https://imgur.com/DZ7hldL.jpg">
+            </div>
+            </div>
+    
+            <script>
+                function myFunction(smallImg)
+                {
+                    var fullImg = document.getElementById("imageBox");
+                    fullImg.src = smallImg.src;
+                }
+            </script>
+    <script>
+        const body = document.querySelector("body");
+const darkLight = document.querySelector("#darkLight");
+const sidebar = document.querySelector(".sidebar");
+const submenuItems = document.querySelectorAll(".submenu_item");
+const sidebarOpen = document.querySelector("#sidebarOpen");
+const sidebarClose = document.querySelector(".collapse_sidebar");
+const sidebarExpand = document.querySelector(".expand_sidebar");
+sidebarOpen.addEventListener("click", () => sidebar.classList.toggle("close"));
+sidebarClose.addEventListener("click", () => {
+  sidebar.classList.add("close", "hoverable");
+});
+sidebarExpand.addEventListener("click", () => {
+  sidebar.classList.remove("close", "hoverable");
+});
+sidebar.addEventListener("mouseenter", () => {
+  if (sidebar.classList.contains("hoverable")) {
+    sidebar.classList.remove("close");
+  }
+});
+sidebar.addEventListener("mouseleave", () => {
+  if (sidebar.classList.contains("hoverable")) {
+    sidebar.classList.add("close");
+  }
+});
+darkLight.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  if (body.classList.contains("dark")) {
+    document.setI
+    darkLight.classList.replace("bx-sun", "bx-moon");
+  } else {
+    darkLight.classList.replace("bx-moon", "bx-sun");
+  }
+});
+submenuItems.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("show_submenu");
+    submenuItems.forEach((item2, index2) => {
+      if (index !== index2) {
+        item2.classList.remove("show_submenu");
+      }
+    });
+  });
+});
+if (window.innerWidth < 768) {
+  sidebar.classList.add("close");
+} else {
+  sidebar.classList.remove("close");
+}
+    </script>
 
-</body>
+  </body>
 </html>
