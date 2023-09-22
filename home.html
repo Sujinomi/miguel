@@ -24,7 +24,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-color: #DCDCDC;
-  background-size: 100% 696px;
+  background-size: 100% 750px;
   display: table;
   margin-right: auto;
   margin-left: auto;
@@ -270,15 +270,6 @@ body.dark {
     left: -100%;
   }
 }
-.intro-image {
-  position: absolute;
-  top: 150%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 
  
         body {
@@ -289,21 +280,15 @@ body.dark {
         
         .first-button {
             background-color: transparent;
-            border: 1px solid black;
+            border: none;
             color: black;
-            padding: 15px 50px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
             margin: 4px 2px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
         }
-        .first-button:hover {
-    background-color: black;
-    color: white;
-}
+    
         .socials {
             position: fixed;
             bottom: 0;
@@ -360,14 +345,51 @@ body.dark {
         padding: 10px;
   
       }
+      .mainheader {
+  font-size: 80px;
+  text-align: center;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.mainheader2 {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.LOGO {
+    background-color: white;
+    width: 700px;
+    height: 340px;
+    grid-area: photoTwo;
+    color: black;
+    text-align: justify;
+    font-size: 23px;
+    padding: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.CONTAINER-1{
+    display: grid;
+    grid-template-areas: "photoOne photoTwo" "photoThree photoThree";
+    height: 340px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.no-underline {
+    text-decoration: none;
+}
         </style>
   </head>
   <body>
-    <!-- navbar -->
+    <div class="mainheader">
+        <br><br><b>MIGUEL's</b><br></div>
+    <div class="mainheader2"><br>Personal Space and Diary</div>
+        <!-- navbar -->
     <nav class="navbar">
       <div class="logo_item">
         <i class="bx bx-menu" id="sidebarOpen"></i>
-        <img src="images/logo.png" alt=""></i>MIGUEL
+        <img src="https://imgur.com/ESp99l1.png" alt=""></i>MIGUEL
       </div>
       <div class="search_bar">
         <input type="text" placeholder="Search" />
@@ -376,7 +398,7 @@ body.dark {
         <i class="bi bi-grid"></i>
         <i class='bx bx-sun' id="darkLight"></i>
         <i class='bx bx-bell' ></i>
-        <img src="images/profile.jpg" alt="" class="profile" />
+        <img src="https://banner2.cleanpng.com/20180701/yig/kisspng-computer-icons-silhouette-my-account-icon-5b388d48343f50.355577991530432840214.jpg" alt="" class="profile" />
       </div>
     </nav>
     <!-- sidebar -->
@@ -396,8 +418,8 @@ body.dark {
             </div>
             <ul class="menu_items submenu">
               <a href="#" class="nav_link sublink">About</a>
-              <a href="#" class="nav_link sublink">Blog</a>
               <a href="#" class="nav_link sublink">Gallery</a>
+              <a href="#" class="nav_link sublink">Feedback</a>
             </ul>
           </li>
           <!-- end -->
@@ -464,14 +486,17 @@ body.dark {
             <a href="https://www.instagram.com/migegs_/" target="_blank" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png" alt="Instagram Logo" style="width:30px;height:30px;"></img></a>
             <a href="https://twitter.com/migsensation_" target="_blank" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png" alt="Twitter Logo" style="width:30px;height:30px;"></img></a></p>
     </div>
-
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <div class="CONTAINER-1"> 
+        <img src="https://imgur.com/FPRkHsq.jpg" style="width:300px;height:340px;"> 
+        <div class="LOGO">Welcome to my personal space! I am Miguel Evangelista, a BSIT Student that found love for art in the form of web designing. This is only an experimental website with the goal of enhancing and training my web developing abilities. It is also a place for me to express my hidden passion for aestheticism. Feel free to explore and get to know me more as you browse through this website!
+            <br><br><div class="first-button"><a href="main2.html" class="no-underline">About Me &nbsp;→</a></div>
+        </div></div><br><br>
+        <center><script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <div class="elfsight-app-9b89077d-874b-44c2-b3d3-d01c8ff75b19"></div></center>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class="intro-image">
-        <img src="https://imgur.com/FPRkHsq.jpg" width="350" height="350"><br>
-        STUDENT - WEB DESIGNER<br>
-        "Found love for art in web designing"<br><br>
-        <button class="first-button">Test</button><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
-    </div>
+        
 
 <br><br><br><br>
 
