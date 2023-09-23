@@ -270,81 +270,7 @@ body.dark {
     left: -100%;
   }
 }
-
- 
-        body {
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-color: #DCDCDC;
-        }
-        
-        .first-button {
-            background-color: transparent;
-            border: none;
-            color: black;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-        }
-    
-        .socials {
-            position: fixed;
-            bottom: 0;
-            right: 24px;
-            z-index: 999;
-        }
-        .marquee-container {
-            overflow: hidden; 
-            width: 50%; 
-            border: 0px solid #000; 
-            padding: 0px; 
-        }
-        .marquee {
-            white-space: nowrap; 
-            animation: marquee 20s linear infinite;
-        }
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-        .intro { 
-  text-align: center; 
-  font-family: Arial;
-}
-.gallery-small-img img {
-        height: 92px;
-        margin: 10px 0;
-        cursor: pointer;
-        display: block;
-        opacity: .6;
-      }
-      .gallery-small-img img:hover {
-        opacity: 1;
-      }
-      .gallery-small-img {
-        float: left;
-      }
-      .gallery {
-        position: absolute;
-        top: 220%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-      }
-      .image-cointainer img {
-        height: 500px;
-      }
-      .image-cointainer {
-        float: right;
-        padding: 10px;
-  
-      }
-      .mainheader {
+.mainheader {
   font-size: 80px;
   text-align: center;
   color: white;
@@ -391,6 +317,8 @@ body.dark {
   </head>
 
   <body>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-dbbca128-fc69-4c81-a82b-4477247266cf"></div>
     <div class="mainheader">
         <br><br><b>MIGUEL's</b></div>
     <div class="mainheader2">Personal Space and Diary</div>
@@ -422,13 +350,14 @@ body.dark {
               <span class="navlink_icon">
                 <i class="bx bx-home-alt"></i>
               </span>
-              <span class="navlink">Home</span>
+              <span class="navlink">Menu</span>
               <i class="bx bx-chevron-right arrow-left"></i>
             </div>
             <ul class="menu_items submenu">
-              <a href="#" class="nav_link sublink">About</a>
-              <a href="#" class="nav_link sublink">Gallery</a>
-              <a href="#" class="nav_link sublink">Feedback</a>
+              <a href="sidebar.html" class="nav_link sublink">Home</a>
+              <a href="about.html" class="nav_link sublink">About</a>
+              <a href="gallery.html" class="nav_link sublink">Gallery</a>
+              <a href="feedback.html" class="nav_link sublink">Feedback</a>
             </ul>
           </li>
           <!-- end -->
@@ -441,36 +370,36 @@ body.dark {
           <!-- duplicate these li tag if you want to add or remove navlink only -->
           <!-- Start -->
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="https://www.facebook.com/migs.evangelista" target="_blank" class="nav_link">
               <span class="navlink_icon">
-                <i class="fas fa-facebook"></i>
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-128.png" width="20px" height="20px">
               </span>
               <span class="navlink">Facebook</span>
             </a>
           </li>
           <!-- End -->
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="https://www.instagram.com/migegs_/" target="_blank" class="nav_link">
               <span class="navlink_icon">
-                <i class="bx bx-loader-circle"></i>
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png" width="20px" height="20px">
               </span>
               <span class="navlink">Instagram</span>
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="https://twitter.com/migsensation_" target="_blank" class="nav_link">
               <span class="navlink_icon">
-                <i class="bx bx-filter"></i>
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png" width="20px" height="20px">
               </span>
               <span class="navlink">Twitter</span>
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="https://www.youtube.com/channel/UCeUIotqXO_eE-Qeyl6ujPCg" target="_blank" class="nav_link">
               <span class="navlink_icon">
-                <i class="bx bx-filter"></i>
+                <img src="https://imgur.com/zfqyHO7.png" width="20px" height="20px">
               </span>
-              <span class="navlink">TikTok</span>
+              <span class="navlink">YouTube</span>
             </a>
           </li>
         </ul>
@@ -488,15 +417,9 @@ body.dark {
         </div>
       </div>
     </nav>
-
-    <div class="socials">
-        <p>
-            <a href="https://www.facebook.com/migs.evangelista" target="_blank" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-128.png" alt="Facebook Logo" style="width:30px;height:30px;"></img></a>
-            <a href="https://www.instagram.com/migegs_/" target="_blank" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png" alt="Instagram Logo" style="width:30px;height:30px;"></img></a>
-            <a href="https://twitter.com/migsensation_" target="_blank" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png" alt="Twitter Logo" style="width:30px;height:30px;"></img></a></p>
-    </div>
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="footer">Disclaimer: No copyright infringement intended.</div>
+
     <script>
         const body = document.querySelector("body");
 const darkLight = document.querySelector("#darkLight");
