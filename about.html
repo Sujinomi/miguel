@@ -1,139 +1,564 @@
-<!DOCTYPE html>
-<html>
-    <title>Athalia</title>
-<head>
-<br><br>
-<div class="taskbar">
-    <a href="athaliacopy.html" style="text-decoration:none; color:white;">Home</a> &nbsp; &nbsp; &nbsp; 
-    | &nbsp; &nbsp; &nbsp;
-    <a href="About.html" style="text-decoration:none; color: white;">Services</a> &nbsp; &nbsp; &nbsp;
-    | &nbsp; &nbsp; &nbsp;
-    <a href="Packages.html" style="text-decoration:none; color:white;">Packages</a> &nbsp; &nbsp; &nbsp;
-    | &nbsp; &nbsp; &nbsp;
-    <a href="Reviews.html" style="text-decoration:none; color:white;">Reviews</a> &nbsp; &nbsp; &nbsp;
-    | &nbsp; &nbsp; &nbsp;
-    <a href="Bookings.html" style="text-decoration:none; color:white;">Book</a> &nbsp; &nbsp; &nbsp;
-</div>
-<div class="mainheader">
-  <h1 style="font-size: 80px">Services</h1>
-    <p style="font-size: 30px">We make sure our services are of high quality.</p>
-    </div>
-    <br><br><br><br>
-<style>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="IT&amp;apos;S TIME TO, KNOW ME, ADMIRATION FOR JAPAN, Miguel&nbsp;Evangelista, Facts &amp;amp; Questions">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.18.6, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Miguel</title>
+    <script type="application/ld+json">{
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": ""
+  }</script>
+      <meta name="theme-color" content="#478ac9">
+      <meta property="og:title" content="Home">
+      <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --white-color: #fff;
+  --blue-color: #4070f4;
+  --grey-color: #707070;
+  --grey-color-light: #aaa;
+}
 body {
-  background-image: url('https://imgur.com/ojClxww.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-color: #DCDCDC;
-  background-size: 100% 30%;
+  background-size: 100% 750px;
   display: table;
   margin-right: auto;
   margin-left: auto;
+  transition: all 0.5s ease;
 }
-.mainheader {
-  padding: 30px;
-  text-align: center;
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body.dark {
+  background-color: #333;
 }
-.taskbar {
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    padding: 14px 20px; 
-    font-size: 17px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body.dark {
+  --white-color: #333;
+  --blue-color: #fff;
+  --grey-color: #f2f2f2;
+  --grey-color-light: #aaa;
 }
-.column {
+/* navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  z-index: 1000;
+  box-shadow: 0 0 2px var(--grey-color-light);
+}
+.logo_item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--blue-color);
+}
+.navbar img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.search_bar {
+  height: 47px;
+  max-width: 430px;
+  width: 100%;
+}
+.search_bar input {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  font-size: 18px;
+  outline: none;
+  background-color: var(--white-color);
+  color: var(--grey-color);
+  border: 1px solid var(--grey-color-light);
+  padding: 0 20px;
+}
+.navbar_content {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+.navbar_content i {
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--grey-color);
+}
+/* sidebar */
+.sidebar {
+  background-color: var(--white-color);
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 80px 20px;
+  z-index: 100;
+  overflow-y: scroll;
+  box-shadow: 0 0 1px var(--grey-color-light);
+  transition: all 0.5s ease;
+}
+.sidebar.close {
+  padding: 60px 0;
+  width: 80px;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.menu_content {
   position: relative;
-  float: left;
-  width: 22.9%;
-  padding: 10px;
-  height: 250px;
-  text-align: center;
-  left: 227px;
-  bottom: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.row:after {
+.menu_title {
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 18px;
+}
+.sidebar.close .menu_title {
+  padding: 6px 30px;
+}
+.menu_title::before {
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+.menu_dahsboard::before {
+  content: "Dashboard";
+}
+.menu_socials::before {
+  content: "Socials";
+}
+.menu_setting::before {
+  content: "Setting";
+}
+.sidebar.close .menu_title::before {
   content: "";
-  display: table;
-  clear: both;
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  border-radius: 12px;
+  background: var(--grey-color-light);
 }
-.tropatrips{
-    position: inherit;
-    display: grid;
-    height: auto;
-    width: 100%;
-    min-height: auto;
-    grid-template-rows: repeat(2, min-content) 1fr;
-    grid-template-columns: 100%;
+.menu_items {
+  padding: 0;
+  list-style: none;
 }
-html, body, { 
-    position:fixed; 
-    top:0; 
-    bottom:0; 
-    left:0; 
-    right:0; 
+.navlink_icon {
+  position: relative;
+  font-size: 22px;
+  min-width: 50px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 6px;
 }
-.parent-container{
-       display: grid;
-       grid-template-areas: "photoOne" "photoTwo" "photoThree" "photoFour";
-       grid-gap: 50px;
-     }
-     
-     .img-1{
-       grid-area: photoOne;
-     }
-     .img-2{
-       grid-area: photoTwo;
-     }
-     .img-3{
-       grid-area: photoThree;
-     }
-     .img-4{
-       grid-area: photoFour;
-     }
-</style>
-    <link rel="stylesheet" href="athaliacopy.css"></link>
-</head>
-<body>
+.navlink_icon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: calc(100% + 100px);
+  left: -20px;
+}
+.navlink_icon:hover {
+  background: var(--blue-color);
+}
+.sidebar .nav_link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+.sidebar.close .navlink {
+  display: none;
+}
+.nav_link:hover {
+  color: var(--white-color);
+  background: var(--blue-color);
+}
+.sidebar.close .nav_link:hover {
+  background: var(--white-color);
+}
+.submenu_item {
+  cursor: pointer;
+}
+.submenu {
+  display: none;
+}
+.submenu_item .arrow-left {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  margin-right: auto;
+}
+.sidebar.close .submenu {
+  display: none;
+}
+.show_submenu ~ .submenu {
+  display: block;
+}
+.show_submenu .arrow-left {
+  transform: rotate(90deg);
+}
+.submenu .sublink {
+  padding: 15px 15px 15px 52px;
+}
+.bottom_content {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  width: 260px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.bottom {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 0;
+  justify-content: space-around;
+  padding: 18px 0;
+  text-align: center;
+  width: 100%;
+  color: var(--grey-color);
+  border-top: 1px solid var(--grey-color-light);
+  background-color: var(--white-color);
+}
+.bottom i {
+  font-size: 20px;
+}
+.bottom span {
+  font-size: 18px;
+}
+.sidebar.close .bottom_content {
+  width: 50px;
+  left: 15px;
+}
+.sidebar.close .bottom span {
+  display: none;
+}
+.sidebar.hoverable .collapse_sidebar {
+  display: none;
+}
+#sidebarOpen {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #sidebarOpen {
+    font-size: 25px;
+    display: block;
+    margin-right: 10px;
+    cursor: pointer;
+    color: var(--grey-color);
+  }
+  .sidebar.close {
+    left: -100%;
+  }
+  .search_bar {
+    display: none;
+  }
+  .sidebar.close .bottom_content {
+    left: -100%;
+  }
+}
+.no-underline {
+    text-decoration: none;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+}
+        </style>
+  </head>
 
-  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-6247f02b-3bb8-4e82-99ce-68f844355e9e"></div>
-<br><br>
-<center>
-   <img src="https://i.imgur.com/TTDP9KP.jpg" width="450" height="450">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <img src="https://i.imgur.com/nnB7KPC.jpg" width="450" height="450"><br><br><br><br>
-   <img src="https://i.imgur.com/hOR9qgQ.jpg" width="450" height="450">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <img src="https://i.imgur.com/QlfFvjT.jpg" width="450" height="450"></center>
-<div class="mainheader"></div>
-    &nbsp; &nbsp; &nbsp; 
-    <br><br><br><br><br><br><br><br><br><br>
-<center><font color="black"><font size="3px">Disclaimer: No copyright infringement intended.</font></font></center>
-    <hr style="height:1px;width:1447px;color:black;background-color:black"><br><br>
-    <div class="row">
-         <div class="column">
-           <h2>Contact Us</h2><hr style="height:2px;width:80px;color:black;background-color:orange" align="center">
-           <p>123 Quezon City</p>
-           <p>+639243434343434</p>
-           <p>athalia.travelandtours@gmail.com</p>
-         </div>
-         <div class="column">
-           <h2>Follow Us<hr style="height:2px;width:80px;color:black;background-color:orange" align="center"></h2>
-           <p>
-            <a href="https://www.facebook.com/athalia.travelticketing" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-128.png" alt="Facebook Logo" style="width:25px;height:25px;"></img></a>
-            <a href="#" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png" alt="Instagram Logo" style="width:25px;height:25px;"></img></a>
-            <a href="#" class="right"><img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png" alt="Twitter Logo" style="width:25px;height:25px;"></img></a></p>
-         </div>
-         <div class="column">
-          <h2>Services<hr style="height:2px;width:80px;color:black;background-color: orange" align="center"></h2>
-          <p>Catering</p>
-          <p>Safety</p>
-          <p>Fastest Local Travel</p>
-          <p>Affordable Deals</p>
+  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" class="u-body u-xl-mode" data-lang="en">
+    <section class="u-align-left u-clearfix u-image u-shading u-section-1" src="" data-image-width="5911" data-image-height="3941" id="sec-99c6">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-align-right u-custom-font u-font-georgia u-subtitle u-text u-text-default u-text-1">IT'S TIME TO</h2>
+        <h1 class="u-align-right u-custom-font u-font-georgia u-text u-title u-text-2">KNOW ME</h1>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-grey-5 u-section-2" id="carousel_9552">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-custom-font u-font-georgia u-subtitle u-text u-text-default u-text-1">ADMIRATION FOR JAPAN</h2><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
+        <div class="u-blog u-expanded-width u-blog-1">
+          <div class="u-repeater u-repeater-1"><!--blog_post-->
+            <div class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+               
+                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="https://imgur.com/Hlc0IQk.jpg" data-image-width="5719" data-image-height="3720"><!--/blog_post_image-->
+              
+                <p class="u-align-center u-small-text u-text u-text-variant u-text-2">Mount Fuji, a Mountain So Beloved</p>
+              </div>
+            </div><div class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-2">
+              <div class="u-container-layout u-similar-container u-container-layout-2">
+                
+                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-2" src="https://imgur.com/LvQr4PG.jpg" data-image-width="3913" data-image-height="2537"><!--/blog_post_image-->
+                
+                <p class="u-align-center u-small-text u-text u-text-variant u-text-3">Hustle, Bustle and Bright Lights of Tokyo, Japan</p>
+              </div>
+            </div><div class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-3">
+              <div class="u-container-layout u-similar-container u-container-layout-3">
+                
+                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-3" src="https://imgur.com/tboq42l.jpg" data-image-width="4496" data-image-height="3000"><!--/blog_post_image-->
+                
+                <p class="u-align-center u-small-text u-text u-text-variant u-text-4">The Beauty of the White Cherry Blossoms&nbsp;</p>
+              </div>
+            </div><!--/blog_post--><!--blog_post-->
+            <!--/blog_post--><!--blog_post-->
+            <!--/blog_post-->
+          </div>
+        </div><!--/blog-->
+        <p class="u-small-text u-text u-text-variant u-text-5">I love ​Japan for its captivating blend of ancient traditions and cutting-edge modernity. From the serene beauty of cherry blossoms in spring to the bustling streets of Tokyo, Japan offers a unique cultural experience at every turn. The rich history and deep-rooted respect for nature are evident in its temples, gardens, and tea ceremonies. Simultaneously, Japan's advancements, anime culture, culinary delights, and pop culture captivate hearts worldwide. I am enamored by the constant pursuit of perfection in every aspect of life, making Japan a place where tradition and progress harmoniously coexist, creating an enduring love affair.</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-2-dark-1 u-section-3" id="sec-db9b">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <img class="u-expanded-height-xl u-image u-image-default u-image-1" src="https://imgur.com/yaXAlsZ.jpg" alt="" data-image-width="1440" data-image-height="1800">
+        <h2 class="u-custom-font u-font-georgia u-text u-text-default u-text-1">Miguel&nbsp;<br>Evangelista
+        </h2>
+        <p class="u-small-text u-text u-text-variant u-text-2"> I am a BSIT Student that found love for art in the form of web designing. This is only an experimental website with the goal of enhancing and training my web developing abilities. It is also a place for me to express my hidden passion for aestheticism. Feel free to explore and get to know me more as you browse through this website!</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-5 u-section-4" id="sec-12b4">
+      <style>
+        .spotify-font {
+          font-size: 48px;
+          font-family: Georgia, Times, "Times New Roman", serif;
+        }
+      </style>
+      <br><br><br><div class="spotify-font"><center>MY SPOTIFY PLAYLIST</font></center></div>
+     <br>&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7Ed2Mc9zvqYyxlrOKt1WRY?utm_source=generator" width="23.5%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/55tqu0mMpkEvMVZeV98X9U?utm_source=generator" width="23.5%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0169Rkc7w5KEBqzTfhAD3h?utm_source=generator" width="23.5%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1PREkS0vA4S80xM5o6j2ml?utm_source=generator" width="23.5%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+    <section class="u-align-center u-clearfix u-palette-2-dark-1 u-section-5" id="sec-58b0">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1">Facts &amp; Questions</h2>
+        <p class="u-text u-text-2">Some questions that most of you might be curious on knowing the answers.</p>
+        <div class="u-accordion u-expanded-width u-faq u-spacing-10 u-accordion-1">
+          <div class="u-accordion-item">
+            <a class="active u-accordion-link u-active-white u-border-1 u-border-grey-25 u-button-style u-text-active-black u-text-hover-black u-text-white u-accordion-link-1" id="link-accordion-f600" aria-controls="accordion-f600" aria-selected="true">
+              <span class="u-accordion-link-text">Where are you currently studying and what year are you now?</span><span class="u-accordion-link-icon u-icon u-text-grey-50 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-66d8"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-66d8" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+            </a>
+            <div class="u-accordion-active u-accordion-pane u-container-style u-shape-rectangle u-accordion-pane-1" id="accordion-f600" aria-labelledby="link-accordion-f600">
+              <div class="u-container-layout u-container-layout-1">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <p>I am currently a 2nd year BSIT student from University of the East - Caloocan Campus. I am only a transferee student though as I finished my first year in AMA University - Main Campus Quezon City.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-border-1 u-border-grey-25 u-button-style u-text-active-black u-text-hover-black u-text-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span class="u-accordion-link-text">Does this website have any educational-related purpose?</span><span class="u-accordion-link-icon u-icon u-text-grey-50 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e303"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-e303" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-shape-rectangle u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <p>No. This website is only purely for my own practice and skills honing. I am trying to explore HTML, CSS, and Java more as I continue my BSIT journey. This website will always be changing as I will be trying lots of stuff that I would like to test or implement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-border-1 u-border-grey-25 u-button-style u-text-active-black u-text-hover-black u-text-white u-accordion-link-3" id="link-accordion-854e" aria-controls="accordion-854e" aria-selected="false">
+              <span class="u-accordion-link-text">Is Information Technology hard?</span><span class="u-accordion-link-icon u-icon u-text-grey-50 u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-fade"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-fade" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-shape-rectangle u-accordion-pane-3" id="accordion-854e" aria-labelledby="link-accordion-854e">
+              <div class="u-container-layout u-container-layout-3">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <p>Being an Information Technology is actually quite fun, but at times also challenging. I believe that as an IT student, you'd want to bring as much patience as possible. In this course, you are sure to encounter lots of trial and error that will test your patience and skills.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-       </div>
+      </div>
+    </section>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-dbbca128-fc69-4c81-a82b-4477247266cf"></div>
+    
+        <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo_item">
+        <i class="bx bx-menu" id="sidebarOpen"></i>
+        <img src="https://imgur.com/ESp99l1.png" alt=""></i>MIGUEL
+      </div>
+      <div class="search_bar">
+        <input type="text" placeholder="Search" />
+      </div>
+      <div class="navbar_content">
+        <i class="bi bi-grid"></i>
+        <i class='bx bx-sun' id="darkLight"></i>
+        <i class='bx bx-bell' ></i>
+        <img src="https://banner2.cleanpng.com/20180701/yig/kisspng-computer-icons-silhouette-my-account-icon-5b388d48343f50.355577991530432840214.jpg" alt="" class="profile" />
+      </div>
+    </nav>
+    <!-- sidebar -->
+    <nav class="sidebar">
+      <div class="menu_content">
+        <ul class="menu_items">
+          <div class="menu_title menu_dahsboard"></div>
+          <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+          <!-- start -->
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-home-alt"></i>
+              </span>
+              <span class="navlink">Menu</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+              <a href="sidebar.html" class="nav_link sublink">Home</a>
+              <a href="about.html" class="nav_link sublink">About</a>
+              <a href="gallery.html" class="nav_link sublink">Gallery</a>
+              <a href="feedback.html" class="nav_link sublink">Feedback</a>
+            </ul>
+          </li>
+          <!-- end -->
+          <!-- duplicate this li tag if you want to add or remove  navlink with submenu -->
+          <!-- start -->
+          <!-- end -->
+        </ul>
+        <ul class="menu_items">
+          <div class="menu_title menu_socials"></div>
+          <!-- duplicate these li tag if you want to add or remove navlink only -->
+          <!-- Start -->
+          <li class="item">
+            <a href="https://www.facebook.com/migs.evangelista" target="_blank" class="nav_link">
+              <span class="navlink_icon">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-128.png" width="20px" height="20px">
+              </span>
+              <span class="navlink">Facebook</span>
+            </a>
+          </li>
+          <!-- End -->
+          <li class="item">
+            <a href="https://www.instagram.com/migegs_/" target="_blank" class="nav_link">
+              <span class="navlink_icon">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png" width="20px" height="20px">
+              </span>
+              <span class="navlink">Instagram</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="https://twitter.com/migsensation_" target="_blank" class="nav_link">
+              <span class="navlink_icon">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png" width="20px" height="20px">
+              </span>
+              <span class="navlink">Twitter</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="https://www.youtube.com/channel/UCeUIotqXO_eE-Qeyl6ujPCg" target="_blank" class="nav_link">
+              <span class="navlink_icon">
+                <img src="https://imgur.com/zfqyHO7.png" width="20px" height="20px">
+              </span>
+              <span class="navlink">YouTube</span>
+            </a>
+          </li>
+        </ul>
+        
+        <!-- Sidebar Open / Close -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span>
+            <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span>
+            <i class='bx bx-log-out'></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="footer">Disclaimer: No copyright infringement intended.</div>
 
-</body>
+    <script>
+        const body = document.querySelector("body");
+const darkLight = document.querySelector("#darkLight");
+const sidebar = document.querySelector(".sidebar");
+const submenuItems = document.querySelectorAll(".submenu_item");
+const sidebarOpen = document.querySelector("#sidebarOpen");
+const sidebarClose = document.querySelector(".collapse_sidebar");
+const sidebarExpand = document.querySelector(".expand_sidebar");
+sidebarOpen.addEventListener("click", () => sidebar.classList.toggle("close"));
+sidebarClose.addEventListener("click", () => {
+  sidebar.classList.add("close", "hoverable");
+});
+sidebarExpand.addEventListener("click", () => {
+  sidebar.classList.remove("close", "hoverable");
+});
+sidebar.addEventListener("mouseenter", () => {
+  if (sidebar.classList.contains("hoverable")) {
+    sidebar.classList.remove("close");
+  }
+});
+sidebar.addEventListener("mouseleave", () => {
+  if (sidebar.classList.contains("hoverable")) {
+    sidebar.classList.add("close");
+  }
+});
+darkLight.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  if (body.classList.contains("dark")) {
+    document.setI
+    darkLight.classList.replace("bx-sun", "bx-moon");
+  } else {
+    darkLight.classList.replace("bx-moon", "bx-sun");
+  }
+});
+submenuItems.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("show_submenu");
+    submenuItems.forEach((item2, index2) => {
+      if (index !== index2) {
+        item2.classList.remove("show_submenu");
+      }
+    });
+  });
+});
+if (window.innerWidth < 768) {
+  sidebar.classList.add("close");
+} else {
+  sidebar.classList.remove("close");
+}
+    </script>
+
+  </body>
 </html>
