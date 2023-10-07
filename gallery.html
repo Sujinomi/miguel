@@ -313,10 +313,108 @@ body.dark {
   color: white;
   text-align: center;
 }
+.gallery-small-img img {
+        height: 92px;
+        margin: 10px 0;
+        cursor: pointer;
+        display: block;
+        opacity: .6;
+      }
+      .gallery-small-img img:hover {
+        opacity: 1;
+      }
+      .gallery-small-img {
+        float: left;
+      }
+      .gallery {
+        position: absolute;
+        top: 140%;
+        left: 30%;
+        transform: translate(-50%,-50%);
+      }
+      .image-cointainer img {
+        height: 500px;
+      }
+      .image-cointainer {
+        float: right;
+        padding: 10px;
+  
+      }
+      .gallery-small-img2 img {
+        height: 92px;
+        margin: 10px 0;
+        cursor: pointer;
+        display: block;
+        opacity: .6;
+      }
+      .gallery-small-img2 img:hover {
+        opacity: 1;
+      }
+      .gallery-small-img2 {
+        float: left;
+      }
+      .gallery2 {
+        position: absolute;
+        top: 140%;
+        left: 69%;
+        transform: translate(-50%,-50%);
+      }
+      .image-cointainer2 img {
+        height: 500px;
+      }
+      .image-cointainer2 {
+        float: right;
+        padding: 10px;
+  
+      }
         </style>
   </head>
 
   <body>
+    <div class="gallery"> 
+      <div class="gallery-small-img">
+  
+          <img src="https://imgur.com/DZ7hldL.jpg" onclick="myFunction(this)">
+          <img src="https://imgur.com/pAp3YLD.jpg" onclick="myFunction(this)">
+          <img src="https://imgur.com/x1Oo7no.jpg" onclick="myFunction(this)">
+          <img src="https://imgur.com/D5KTa9f.jpg" onclick="myFunction(this)">
+          <img src="https://imgur.com/Qmp3T2A.jpg" onclick="myFunction(this)">
+  
+          </div>
+          <div class="image-cointainer">
+              <img id="imageBox" src="https://imgur.com/DZ7hldL.jpg">
+          </div>
+          </div>
+  
+          <script>
+              function myFunction(smallImg)
+              {
+                  var fullImg = document.getElementById("imageBox");
+                  fullImg.src = smallImg.src;
+              }
+          </script>
+          <div class="gallery2"> 
+            <div class="gallery-small-img2">
+        
+                <img src="https://imgur.com/DZ7hldL.jpg" onclick="myFunction(this)">
+                <img src="https://imgur.com/pAp3YLD.jpg" onclick="myFunction(this)">
+                <img src="https://imgur.com/x1Oo7no.jpg" onclick="myFunction(this)">
+                <img src="https://imgur.com/D5KTa9f.jpg" onclick="myFunction(this)">
+                <img src="https://imgur.com/Qmp3T2A.jpg" onclick="myFunction(this)">
+        
+                </div>
+                <div class="image-cointainer2">
+                    <img id="imageBox" src="https://imgur.com/DZ7hldL.jpg">
+                </div>
+                </div>
+        
+                <script>
+                    function myFunction(smallImg)
+                    {
+                        var fullImg = document.getElementById("imageBox");
+                        fullImg.src = smallImg.src;
+                    }
+                </script>
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-dbbca128-fc69-4c81-a82b-4477247266cf"></div>
     <div class="mainheader">
@@ -350,10 +448,11 @@ body.dark {
               <span class="navlink_icon">
                 <i class="bx bx-home-alt"></i>
               </span>
-              <span class="navlink">Home</span>
+              <span class="navlink">Menu</span>
               <i class="bx bx-chevron-right arrow-left"></i>
             </div>
             <ul class="menu_items submenu">
+              <a href="sidebar.html" class="nav_link sublink">Home</a>
               <a href="about.html" class="nav_link sublink">About</a>
               <a href="gallery.html" class="nav_link sublink">Gallery</a>
               <a href="feedback.html" class="nav_link sublink">Feedback</a>
